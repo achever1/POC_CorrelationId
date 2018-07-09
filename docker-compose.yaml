@@ -1,0 +1,14 @@
+---
+version: '3'
+
+services:
+
+  s1:
+    image: traceid:1.0-SNAPSHOT
+    ports:
+    - 9000:9000
+
+  s2:
+    image: traceid:1.0-SNAPSHOT
+    ports:
+    - 9001:9000
