@@ -2,7 +2,7 @@
 POC to handle a correlation ID in logs like MDC in an asynchronous and non blocking env (Play and Akka)
 
 Principles:
- - A filter generates a UUID id not already present
+ - A filter generates a UUID if it is not already present
  - The request headers are converted implicitly to a logback Marker which is used implicitly by Play Logger
  - Because Akka uses an actor Logging which doesn't handle Markers, the marker is added to command objects and converted to a MDC compliant object
 https://doc.akka.io/docs/akka/2.5/logging.html#logging-thread-akka-source-and-actor-system-in-mdc
