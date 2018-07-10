@@ -8,11 +8,12 @@ Principles:
 https://doc.akka.io/docs/akka/2.5/logging.html#logging-thread-akka-source-and-actor-system-in-mdc
 
 
-Impacts on code:
+Impacts on code base that want to implem this:
  - Add a filter to generate a UUID when not present
  - Add converter in the controllers to create a Marker for logging
  - Update methods that log information to allow them to take an implicit Marker
  - Add an implicit Marker to the Command Objects and convert the marker to a Map (akka logging doesn't handle markers)
+ - Mixin actors with a trait that convert the marker of commands into a MDC.
 
 ## Build
 ```
